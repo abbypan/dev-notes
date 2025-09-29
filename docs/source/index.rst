@@ -15,4 +15,9 @@
    go/mirror
 
 
+.. toctree::
+   :maxdepth: 1
+   :caption: rust
+
+   rust/cargo
 
