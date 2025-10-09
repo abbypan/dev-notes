@@ -21,3 +21,9 @@
 
    rust/cargo
 
+.. toctree::
+   :maxdepth: 1
+   :caption: android
+
+   android/gradle
+
