@@ -1,6 +1,23 @@
 gradle
 ========
 
+1. android studio初始化相关文件。
+
+#. 手动添加国内镜像。
+
+#. 再用cursor辅助开发。
+
+
+gradle.properties
+-------------------
+
+.. note::
+
+        systemProp.http.proxyHost=127.0.0.1
+        systemProp.http.proxyPort=8080
+        systemProp.https.proxyHost=127.0.0.1
+        systemProp.https.proxyPort=8080
+
 
 gradle-wrapper.properties 
 -----------------------------
@@ -69,9 +86,8 @@ build.gradle
 
 .. note::
 
-        plugins  {
-            id "com.android.application" version "8.13.0" apply false
-            id "org.jetbrains.kotlin.android" version "2.2.0" apply false
+        plugins {
+            alias(libs.plugins.android.application) apply false
         }
 
 
@@ -82,77 +98,75 @@ app/build.gradle
 .. note::
 
         plugins {
-            id 'com.android.application'
-            id 'org.jetbrains.kotlin.android'
+            alias(libs.plugins.android.application)
         }
 
         android {
-            namespace 'com.example.jwtapp'
-            compileSdk = 34
+            namespace = 'com.example.myappcert'
+            compileSdk 36
 
             defaultConfig {
-                applicationId = "com.example.jwtapp"
-                minSdk = 26
-                targetSdk = 34
-                versionCode = 1
-                versionName = "1.0"
+                applicationId "com.example.myappcert"
+                minSdk 28
+                targetSdk 36
+                versionCode 1
+                versionName "1.0"
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
             }
 
             buildTypes {
                 release {
-                    minifyEnabled = false
-                    proguardFiles(
-                            getDefaultProguardFile('proguard-android-optimize.txt'),
-                            'proguard-rules.pro'
-                    )
-                }
-                debug {
-                    minifyEnabled = false
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
                 }
             }
-
-            buildFeatures {
-                viewBinding = true
-            }
-
             compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_17
-                targetCompatibility = JavaVersion.VERSION_17
-            }
-
-            kotlinOptions {
-                jvmTarget = "17"
+                sourceCompatibility JavaVersion.VERSION_11
+                targetCompatibility JavaVersion.VERSION_11
             }
         }
 
         dependencies {
-            implementation "org.jetbrains.kotlin:kotlin-stdlib:2.2.0"
-            implementation 'androidx.core:core-ktx:1.12.0'
-            implementation 'androidx.appcompat:appcompat:1.7.0'
-            implementation 'com.google.android.material:material:1.12.0'
-
-            // OkHttp for HTTPS
-            implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-            implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
-
-            // JWT ES256
-            implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
-            runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
-            runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+            implementation libs.appcompat
+            implementation libs.material
+            implementation libs.okhttp
+            implementation libs.jjwt.api
+            runtimeOnly libs.jjwt.impl
+            runtimeOnly libs.jjwt.jackson
+            testImplementation libs.junit
+            androidTestImplementation libs.ext.junit
+            androidTestImplementation libs.espresso.core
         }
 
-        androidComponents {
-            onVariants(selector().withBuildType("debug")) { variant ->
-                def runtimeConfig = variant.runtimeConfiguration
-                def copyName = variant.name + "RuntimeClasspathCopy"
 
-                if (!configurations.findByName(copyName)) {
-                    configurations.create(copyName) { conf ->
-                        conf.extendsFrom(runtimeConfig)
-                        conf.canBeResolved = true
-                        conf.canBeConsumed = false
-                    }
-                }
-            }
-        }
+libs.versions.toml
+------------------------
+
+.. note::
+
+        [versions]
+        agp = "8.13.0"
+        junit = "4.13.2"
+        junitVersion = "1.1.5"
+        espressoCore = "3.5.1"
+        appcompat = "1.6.1"
+        material = "1.10.0"
+        okhttp = "4.12.0"
+        jjwt = "0.12.3"
+
+        [libraries]
+        junit = { group = "junit", name = "junit", version.ref = "junit" }
+        ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+        espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+        appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+        material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+        okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+        jjwt-api = { group = "io.jsonwebtoken", name = "jjwt-api", version.ref = "jjwt" }
+        jjwt-impl = { group = "io.jsonwebtoken", name = "jjwt-impl", version.ref = "jjwt" }
+        jjwt-jackson = { group = "io.jsonwebtoken", name = "jjwt-jackson", version.ref = "jjwt" }
+
+        [plugins]
+        android-application = { id = "com.android.application", version.ref = "agp" }
+
 
