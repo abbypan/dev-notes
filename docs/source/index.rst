@@ -34,3 +34,9 @@
 
    apache/ssl
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: windows
+
+   windows/scoop
