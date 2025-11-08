@@ -41,3 +41,10 @@
 
    windows/scoop
    windows/audio
+
+.. toctree::
+   :maxdepth: 1
+   :caption: linux
+
+   linux/arch
+   linux/debian
