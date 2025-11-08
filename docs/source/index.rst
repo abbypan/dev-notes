@@ -40,3 +40,4 @@
    :caption: windows
 
    windows/scoop
+   windows/audio
