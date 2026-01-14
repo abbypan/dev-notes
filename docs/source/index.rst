@@ -44,6 +44,12 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: pic
+
+   pic/imagemagick
+
+.. toctree::
+   :maxdepth: 1
    :caption: linux
 
    linux/arch
