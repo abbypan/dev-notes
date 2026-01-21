@@ -19,6 +19,7 @@
    :maxdepth: 1
    :caption: rust
 
+   rust/rust
    rust/cargo
 
 .. toctree::
