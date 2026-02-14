@@ -55,3 +55,10 @@
 
    linux/arch
    linux/debian
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: software
+
+   software/kindle
