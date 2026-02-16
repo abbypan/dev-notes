@@ -27,6 +27,7 @@
    :caption: android
 
    android/gradle
+   android/apk-mitm
 
 
 .. toctree::
@@ -62,4 +63,3 @@
    :caption: software
 
    software/kindle
-   software/apk-mitm
