@@ -24,6 +24,11 @@ https://github.com/patrickfav/uber-apk-signer
 
 npm install -g apk-mitm
 
+安装android sdk
+--------------------
+
+Android SDK
+
 
 重打包apk
 ------------
