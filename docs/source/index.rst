@@ -64,3 +64,20 @@
    :caption: software
 
    software/kindle
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: home-router
+
+   home-router/TEWA-600AGM.rst  
+   home-router/TTEWA-780V.rst
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: game
+
+   game/3ds.rst  
+   game/wiiu.rst  
+
