@@ -72,11 +72,62 @@ PC启动mitmproxy，假设mitmproxy的port为8080
 手机侧使用浏览器（例如edge, firefox）访问 https://mitm.it ，根据提示下载 mitmproxy root cert文件，在系统中添加用户根证书
 
 
-app访问，pc侧mitm
--------------------
+app访问，pc侧mitm web页
+-------------------------
 
 pc侧使用浏览器打开 http://127.0.0.1:8081/ ，切换到 flow list 子页
 
 手机使用app访问 https 内容
 
 pc侧mitm查看内容
+
+
+app访问，pc侧mitm用python解析指定内容
+------------------------------------------
+
+
+示例 example.py
+######################
+
+.. code-block:: python
+   :linenos:
+
+        from mitmproxy import http
+        from datetime import datetime
+        import json
+        import os
+        import hashlib
+
+        OUTFILE = "example.txt"
+
+
+        with open(OUTFILE, "w") as f:
+            pass
+
+        def response(flow: http.HTTPFlow):
+            url = flow.request.pretty_url
+            if "https://example.com/api/auth" in url:
+                body = flow.response.content
+                try:
+                    data = json.loads(body)
+                    token = data.get('data', {}).get('token')
+                    if token:
+                        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        with open(OUTFILE, "a") as f:
+                            f.write(f"[{ts}] : {token}\n\n")
+
+                except Exception as e:
+                    with open(OUTFILE, "a") as f:
+                        f.write(f"Exception: {e}\n")
+
+
+
+pc侧mitmproxy运行 example.py
+###################################
+
+
+mitmproxy -s example.py
+
+手机使用app访问 https 内容
+
+pc侧可查看解析出的 example.txt
