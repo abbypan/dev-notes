@@ -27,6 +27,7 @@
    :caption: android
 
    android/gradle
+   android/app-mitm
    android/apk-mitm
 
 
