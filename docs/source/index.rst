@@ -70,8 +70,9 @@
    :maxdepth: 1
    :caption: home-router
 
-   home-router/TEWA-600AGM.rst  
-   home-router/TTEWA-780V.rst
+   home-router/TEWA-600AGM.rst
+   home-router/TEWA-780V.rst
+
 
 
 .. toctree::
