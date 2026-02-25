@@ -10,17 +10,15 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: go
+   :caption: program
 
-   go/mirror
+   program/rust
+   program/go
+   program/perl
+   program/r
+   program/lisp
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: rust
-
-   rust/rust
-   rust/cargo
 
 .. toctree::
    :maxdepth: 1
@@ -63,6 +61,7 @@
    :maxdepth: 1
    :caption: software
 
+   software/vim.rst
    software/kindle
 
 
