@@ -43,11 +43,6 @@
    windows/scoop
    windows/audio
 
-.. toctree::
-   :maxdepth: 1
-   :caption: pic
-
-   pic/imagemagick
 
 .. toctree::
    :maxdepth: 1
@@ -61,6 +56,8 @@
    :maxdepth: 1
    :caption: software
 
+   software/imagemagick
+   software/pandoc
    software/vim.rst
    software/kindle
 
