@@ -333,3 +333,19 @@ deiban 系统降级内核
 
 `Downgrade from Debian SID to Stable from Jessie to
 Wheezy <http://ispire.me/downgrade-from-debian-sid-to-stable-from-jessie-to-wheezy/>`__
+
+vps xfce
+------------
+
+::
+
+    apt install tasksel
+
+    tasksel
+
+    apt install xrdp
+
+    systemctl enable xrdp && systemctl start xrdp
+
+
+Remote Desktop Client (RDP) 远程连接
