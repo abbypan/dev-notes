@@ -71,6 +71,8 @@ PC启动mitmproxy，假设mitmproxy的port为8080
 
 手机侧使用浏览器（例如edge, firefox）访问 https://mitm.it ，根据提示下载 mitmproxy root cert文件，在系统中添加用户根证书
 
+重启
+
 
 app访问，pc侧mitm web页
 -------------------------

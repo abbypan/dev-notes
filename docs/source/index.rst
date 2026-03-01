@@ -46,6 +46,13 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: crypto
+
+   crypto/openssl
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: linux
 
    linux/arch
