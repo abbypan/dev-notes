@@ -844,3 +844,14 @@ yay 提示 libalpm.so.13 库文件丢失\`
 ::
 
    sudo ln -sf /usr/lib/libalpm.so.14 /usr/lib/libalpm.so.13
+
+nvidia闪屏
+-----------
+
+::
+
+    xfconf-query -c xfwm4 -p /general/vblank_mode
+
+    xfconf-query -c xfwm4 -p /general/vblank_mode -s off
+
+
