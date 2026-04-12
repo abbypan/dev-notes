@@ -44,6 +44,7 @@
 
    windows/scoop
    windows/audio
+   windows/wsl
 
 .. toctree::
    :maxdepth: 1
@@ -64,6 +65,7 @@
    :caption: software
 
    software/kindle
+   software/gerrit
 
 
 .. toctree::
