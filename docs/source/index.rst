@@ -10,17 +10,15 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: go
+   :caption: program
 
-   go/mirror
+   program/rust
+   program/go
+   program/perl
+   program/r
+   program/lisp
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: rust
-
-   rust/rust
-   rust/cargo
 
 .. toctree::
    :maxdepth: 1
@@ -46,11 +44,13 @@
    windows/audio
    windows/wsl
 
+
 .. toctree::
    :maxdepth: 1
-   :caption: pic
+   :caption: crypto
 
-   pic/imagemagick
+   crypto/openssl
+
 
 .. toctree::
    :maxdepth: 1
@@ -64,6 +64,9 @@
    :maxdepth: 1
    :caption: software
 
+   software/imagemagick
+   software/pandoc
+   software/vim.rst
    software/kindle
    software/gerrit
 
