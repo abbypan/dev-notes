@@ -6,6 +6,9 @@
 
 powershell 管理员
 
+
+.. note::
+
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
     dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
@@ -16,10 +19,15 @@ powershell 管理员
 查看版本 
 ###############
 
+.. note::
+
     wsl -l -o 
 
 安装 
 ###############
+
+
+.. note::
 
     wsl --install Ubuntu-20.04  
 
@@ -28,6 +36,9 @@ powershell 管理员
  
 迁移到D盘
 ###############
+
+
+.. note::
 
     wsl --shutdown
 
@@ -39,6 +50,9 @@ powershell 管理员
 
 压缩wsl镜像
 ###############
+
+
+.. note::
 
     wsl --shutdown
 
