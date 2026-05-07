@@ -40,9 +40,10 @@
    :maxdepth: 1
    :caption: windows
 
-   windows/scoop
    windows/audio
    windows/wsl
+   windows/scoop
+   windows/choco
 
 
 .. toctree::
