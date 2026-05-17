@@ -220,7 +220,7 @@ blkid 查看 archlinux 根分区的PARTUUID。
 
 ::
 
-   default arch
+   default @saved
    timeout 3
    console-mode max
 
