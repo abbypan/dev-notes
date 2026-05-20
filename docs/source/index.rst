@@ -71,6 +71,7 @@
    software/kindle
    software/gerrit
    software/proxy
+   software/codex
 
 
 .. toctree::
