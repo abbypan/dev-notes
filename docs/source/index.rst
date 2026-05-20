@@ -70,6 +70,7 @@
    software/vim.rst
    software/kindle
    software/gerrit
+   software/proxy
 
 
 .. toctree::
