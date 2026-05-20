@@ -1,7 +1,7 @@
 开发笔记
 ===================
 
-.. note::
+.. code-block::
 
    https://github.com/abbypan/dev-notes
 
