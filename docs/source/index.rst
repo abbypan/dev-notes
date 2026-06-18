@@ -72,6 +72,7 @@
    software/gerrit
    software/proxy
    software/codex
+   software/antigravity
 
 
 .. toctree::
