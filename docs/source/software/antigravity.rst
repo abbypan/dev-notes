@@ -8,9 +8,13 @@ windows下配置proxy
 
 假设Antigravity的安装目录为 
 
+.. note::
+
         C:\Users\xxx\AppData\Local\Programs\antigravity
 
 在ProxyBridge里以下2个exe加入代理规则即可：
+
+.. note::
 
         C:\Users\xxx\AppData\Local\Programs\antigravity\Antigravity.exe
 
